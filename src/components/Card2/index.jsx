@@ -1,6 +1,6 @@
 import "./index.css"
 import "./wish.css"
-import Photo from "../week10/data.json"
+import Photo from "../week15/data.json"
 import PostedStamp from "../Postedstamp"
 import Image from "mui-image"
 
