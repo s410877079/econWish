@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { Main } from "../components/Layout2";
-import { NavbarCustom, NavbarItem } from "../components/NavbarCustom";
+import { Main } from "../Layout2";
+import { NavbarCustom, NavbarItem } from "../NavbarCustom";
 import './App.css'
 import PlayIcon from '@mui/icons-material/PlayArrow';
 import NextIcon from '@mui/icons-material/FastForward';
 import PreviousIcon from '@mui/icons-material/FastRewind';
-import Card from '../components/Card2';
+import Card from '../Card2';
 import { IconButton } from '@mui/material';
-import appConfig from "../appConfig.json"
 import dataJson from "./data.json"
-import { Gallery, GalleryItem } from '../components/Layout3';
+import { Gallery, GalleryItem } from '../Layout3';
 
 export default function App() {
 
@@ -22,7 +21,7 @@ export default function App() {
     const cards = users.map((e, i) => {
         return (
             <GalleryItem key={i}>
-                <Card user={e}/>
+                <Card user={e} />
             </GalleryItem>
         )
     })
