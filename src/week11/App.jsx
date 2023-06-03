@@ -5,7 +5,7 @@ import './App.css'
 import PlayIcon from '@mui/icons-material/PlayArrow';
 import NextIcon from '@mui/icons-material/FastForward';
 import PreviousIcon from '@mui/icons-material/FastRewind';
-import Card from '../components/Card2';
+import Card from '../components/Card';
 import { IconButton } from '@mui/material';
 import appConfig from "../appConfig.json"
 import dataJson from "./data.json"
@@ -13,27 +13,27 @@ import { Gallery, GalleryItem } from '../components/Layout3';
 
 export default function App() {
 
-    // const style = {margin:"auto", width: "370px"};
-    console.log(dataJson)
     const users = convertUsersToArrayOfObject(dataJson)
 
-    const style = { margin: 'auto', width: "370px" };
+    const style = {margin: "auto", width: "370px"};
 
     const cards = users.map((e, i) => {
         return (
             <GalleryItem key={i}>
-                <Card user={e}/>
+                <Card user={e} style={style}/>
             </GalleryItem>
         )
     })
 
-    // console.log(style)
+    console.log(style)
     return (
         <div className="App">
-            {/* <Card user={users[2]} style={style}/> */}
-            <Gallery>
+            <Card user={users[0]} style={style}/>
+{/*             
+                <Gallery>
                 {cards}
-            </Gallery>
+                </Gallery> */}
+            
             <NavbarCustom>
                 <NavbarItem>
                     <IconButton>
@@ -41,6 +41,7 @@ export default function App() {
                     </IconButton>
                 </NavbarItem>
                 <NavbarItem>
+                    {/* <PlayIcon/> */}
                     <IconButton>
                         <PlayIcon />
                     </IconButton>
@@ -74,8 +75,7 @@ function getUser(targetUser, pos) {
             name: targetUser[pos.name],
             grade: targetUser[pos.grade],
             imgSrc: targetUser[pos.imgSrc],
-            wish: targetUser[pos.wish],
-            imgSrc2: targetUser[pos.imgSrc2]
+            wish: targetUser[pos.wish]
         }
     )
 }
@@ -90,11 +90,10 @@ function getUserPositionIndex(user0) {
     pos.name = pos.Name
     pos.grade = pos.Grade
     pos.wish = pos.Wish
-    pos.imgSrc2 = pos.Photo
     return pos
 }
 
-function test() {
+function test(){
     user0 = ['Timestamp', 'Email Address', 'Name', 'Photo', 'Grade', 'Wish', 'ThumbnailLink']
     var pos = Object()
     user0.map(
@@ -106,6 +105,5 @@ function test() {
     pos.name = pos.Name
     pos.grade = pos.Grade
     pos.wish = pos.Wish
-    pos.imgSrc2 = pos.Photo
     return pos
 }
