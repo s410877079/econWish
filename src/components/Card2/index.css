@@ -1,224 +1,283 @@
-.card {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
+/* card */
+
+/* card-background */
+.card-background {
 
     position: absolute;
-    /* width: 403px;
-    height: 682px; */
-    max-width: 370px;
-    max-height: 560px;
+    width: 4032px;
+    height: 3024px;
+    left: calc(50% - 4032px/2 + 51px);
+    top: calc(50% - 3024px/2 + 67px);
 
-    background: #fffbed;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    /* background: url(card-background.jpg); */
+    opacity: 0.26;
 
-     /* Inside auto layout */
 
-     flex: none;
-     order: 0;
-     align-self: stretch;
-     flex-grow: 1;
- 
-     /* Auto layout */
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     padding: 0px;
- 
+}
+.card-id {
+    
+}
+/* stamp */
+.stamp-holder {
+    box-sizing: border-box;
+    /* position: absolute; */
+    position: relative;
+    width: 232px;
+    height: 297px;
+    left: 57px;
+    margin: 0px;
+    padding: 0 10px 13px 0;
+    top: 38px;
+    /* border: 1px solid #000000; */
 }
 
-/* card-content */
-.card-content {
+.stamp-photo {
+    position: absolute;
+    width: 209px;
+    height: 257px;
+    left: calc(50% - 209px/2 - 0.5px);
+    top: calc(50% - 257px/2 + 3px);
+
+    background: #FFFFFF;
+}
+
+/* seal */
+.seal {
+
+    box-sizing: border-box;
+
     /* Auto layout */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 38px 15px;
-    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px 0px;
+    gap: 10px;
 
-    width: 370px;
-    height: 560px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: -73.11px;
+    bottom: -66px;
 
-    background: #f5f5f5;
+    border: 5px solid #008adb;
+    border-radius: 150px;
+    transform: rotate(28deg);
+
+
+}
+
+.seal-color {
+    filter: invert(26%) sepia(53%) saturate(2874%) hue-rotate(187deg) brightness(91%) contrast(99%);
+
+}
+
+/* seal-icon */
+.seal-icon {
+
+    width: 120px;
+    height: 130px;
+
+    font-family: 'sans-serif';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0164ac;
+
+    transform: rotate(28deg);
 
     /* Inside auto layout */
-    /* flex: none;
+    flex: none;
     order: 0;
     align-self: stretch;
-    flex-grow: 1; */
-}
+    flex-grow: 1;
 
-/* background */
-.background {
-    box-sizing: border-box;
-    margin-top: 25px;
-    width: 370px;
-    height: 540px;
-
-    background: #f5f5f5;
-    border: 1px solid #524b4b;
-
-    /* Inside auto layot */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 
 }
 
-/* photo-upload */
-.photo-upload {
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    left: -15px;
-    top: 360px;
-    align-content: center;
-}
-
-/* photo */
-.photo {
-    position: absolute;
-    width: 300px;
-    height: 180px;
-    left: 48px;
-
-    /* background-image: center;
-    background-position: center; */
-    background: #f8ebbe;
-}
-
-/* stamp-section */
-.stamp-section {
-    position: absolute;
-    width: 338px;
-    height: 170px;
-    left: 10px;
-    top: 40px;
-}
-
-/* sender-info */
-.sender-info {
-    position: absolute;
-    width: 160px;
-    height: 112px;
-    left: 30px;
-    top: 45px;
-}
-
-/* sender-grade */
-.sender-grade {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px 111px 0px 0px;
-    gap: 7px;
-
-    position: absolute;
-    width: 160px;
-    height: 28px;
-    left: 0px;
-    top: 84px;
-}
-
-/* sender-grade-text */
-.sender-grade-text {
-    width: 131px;
-    height: 28px;
-    font-family: "Jacques Francois";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    margin-left: 4px;
-
-    color: #000000;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-/* sender-name */
-.sender-name {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px 111px 0px 0px;
-    gap: 7px;
-
-    position: absolute;
-    width: 158px;
-    height: 28px;
-    left: 4px;
-    top: 42px;
-}
-
-/* sender-name-text */
-.sender-name-text {
-    width: 131px;
-    height: 28px;
-
-    font-family: "Imperial Script";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 39px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-
-    color: #000000;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+.text-shadow {
+    text-shadow:
+        2px 0px 0px white,
+        /* Right shadow */
+        -2px 0px 0px white,
+        /* Left shadow */
+        0px 2px 0px white,
+        /* Bottom shadow */
+        0px -2px 0px white;
+    /* Top shadow */
 }
 
 /* sender */
 .sender {
+
     /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 0px 111px 0px 0px;
-    gap: 7px;
+    padding: 0px;
+    gap: 14px;
 
-    position: absolute;
-    width: 158px;
-    height: 29px;
-    left: 7px;
-    top: 0px;
+    /* position: absolute; */
+    width: 269px;
+    height: 58px;
+    left: calc(50% - 269px/2 - 0.5px);
+    top: 402px;
+
+
+
 }
 
-/* sender-text */
-.sender-text {
-    width: 78px;
-    height: 29px;
+/* label */
+.label {
 
-    font-family: "Jacques Francois";
+    width: 75px;
+    height: 24px;
+
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 29px;
-    /* identical to box height */
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
     display: flex;
     align-items: center;
-    text-align: left;
+    text-align: center;
 
     color: #000000;
 
-    /* border: 1px solid #ffffff; */
+    border: 1px solid #FFFFFF;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+
+}
+
+/* sender-info */
+.sender-info {
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+
+    width: 180px;
+    height: 58px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+
+
+}
+
+/* sender-name */
+.sender-name {
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+
+    width: 180px;
+    height: 24px;
+
+    border-bottom: 1px dashed #000000;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+}
+
+/* sender-name-text */
+.sender-name-text {
+
+    width: 105px;
+    height: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    border: 0.3px solid #FFFFFF;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+
+}
+
+/* sender-grade */
+.sender-grade {
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+
+    width: 180px;
+    height: 24px;
+
+    border-bottom: 1px dashed #000000;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+}
+
+/* sender-grade-text */
+.sender-grade-text {
+
+    width: 133px;
+    height: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    border: 0.3px solid #FFFFFF;
 
     /* Inside auto layout */
     flex: none;

@@ -1,100 +1,110 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Global } from '@emotion/react';
-import { styled } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { grey } from '@mui/material/colors';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Skeleton from '@mui/material/Skeleton';
-import Typography from '@mui/material/Typography';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
-const drawerBleeding = 56;
+import { useState } from "react"
+import "./index.css"
+import pigeon from "./pigeon.svg"
 
-const Root = styled('div')(({ theme }) => ({
-  height: '100%',
-  backgroundColor:
-    theme.palette.mode === 'light' ? grey[100] : theme.palette.background.default,
-}));
+import { ToggleButton } from "@mui/material";
+import ImageIcon from '@mui/icons-material/Image';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
-const StyledBox = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'light' ? '#fff' : grey[800],
-}));
+import Image from "mui-image"
+import { Typography } from "@mui/material"
 
-const Puller = styled(Box)(({ theme }) => ({
-  width: 30,
-  height: 6,
-  backgroundColor: theme.palette.mode === 'light' ? grey[300] : grey[900],
-  borderRadius: 3,
-  position: 'absolute',
-  top: 8,
-  left: 'calc(50% - 15px)',
-}));
 
-function SwipeableEdgeDrawer(props) {
-  const { window } = props;
-  const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
-  };
+export default function Card2({ user }) {
 
-  // This is used only for the example
-  const container = window !== undefined ? () => window().document.body : undefined;
 
-  return (
-    <div>
-      <Box sx={{ textAlign: 'center', pt: 1 }}>
-        <Button onClick={toggleDrawer(true)}>Open</Button>
-      </Box>
-      <SwipeableDrawer
-        container={container}
-        anchor="bottom"
-        open={open}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
-        swipeAreaWidth={drawerBleeding}
-        disableSwipeToOpen={false}
-        ModalProps={{
-          keepMounted: true,
+  const { name, grade, imgSrc, wish } = user
+
+  const [inside, setInside] = useState(false)
+  const [view, setView] = useState("text")
+
+  const [formats, setFormats] = React.useState(() => ['bold', 'italic']);
+
+
+
+  function showtext() {
+    if (view === "picture") {
+      setView("text")
+    } else {
+      setView("picture")
+    }
+  }
+
+  function Outside() {
+    return (<>
+      <div className="stamp-section" style={{ display: "flex", flexDirection: "column" }}>
+        <div className="main-image" >
+          <Image
+            src={imgSrc}
+            height="305px"
+            width="305px"
+            duration={0}
+            style={{ position: "relative", top: 25 }}
+          />
+        </div>
+        <img src={pigeon} alt="" style={{ maxWidth: 100, position: "absolute", right: 70, top: 310, transform: "rotate(28deg)" }}></img>
+      </div>
+      <div className="sender-info" style={{ marginTop: 50 }}>
+        <div className="sender-name" style={{ fontFamily: 'Inter', fontStyle: "normal", fontWeight: 600, fontSize: 32 }}>{name}</div>
+        <div className="sender-grade" style={{ color: "gray", fontFamily: 'Inter', fontStyle: "normal", fontWeight: 600, fontSize: 20 }}>{grade}</div>
+        <button className="wish-text" style={{
+          width: 300, height: 150,
+          color: "gray", fontFamily: 'Inter', fontStyle: "normal", fontWeight: 300, fontSize: 20,
+          overflow: "hidden", textOverflow: "ellipsis"
         }}
-      >
-        <StyledBox
-          sx={{
-            position: 'absolute',
-            top: -drawerBleeding,
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
-            visibility: 'visible',
-            right: 0,
-            left: 0,
-          }}
-        >
-          <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}>51 results</Typography>
-        </StyledBox>
-        <StyledBox
-          sx={{
-            px: 2,
-            pb: 2,
-            height: '100%',
-            overflow: 'auto',
-          }}
-        >
-          <Skeleton variant="rectangular" height="100%" />
-        </StyledBox>
-      </SwipeableDrawer>
-    </div>
-  );
+          onClick={function (e) {
+            e.preventDefault();
+            setInside(true)
+          }}>{wish}</button>
+      </div>
+    </>)
+  }
+
+
+  function Inside() {
+
+
+
+    return (<>
+      <div className="stamp-section" style={{ display: "flex", flexDirection: "column" }}>
+        <Image
+          src={imgSrc}
+          height="653px"
+          width="386px"
+          duration={0}
+          style={{ position: "relative" }}
+        />
+        {(view === "text") ? <Typography color={"white"} sx={{ zIndex: 1, position: "absolute", width: 300, top: 200, right: 75 }}>{wish}</Typography> : ""}
+        {(view === "text") ? <div className="background" style={{ height: 653, width: 386, background: "#0e0d0d96", position: "absolute" }}></div> : ""}
+
+        <ToggleButton
+          value={formats}
+          sx={{ width: 40, height: 40, position: "absolute", bottom: 100, right: 200, color: "black", background: (view === "text") ? "gray" : "white", "&:hover": { background: "white" }, borderRadius: "90%" }}
+          onClick={showtext}
+        ><ImageIcon /></ToggleButton>
+
+
+        <IconButton sx={{ width: 40, height: 40, position: "absolute", top: 50, right: 50, "&:hover": { borderColor: "none" }, "&:focus": { outline: "none" } }}
+          onClick={function (e) { e.preventDefault(); setInside(false) }}>
+          <CloseIcon sx={{ color: 'white' }} />
+        </IconButton>
+
+      </div >
+    </>)
+  }
+
+  return (<>
+    <div className="card">
+      <div className="card-content">
+        {(inside == true) ? <Inside /> : <Outside />}
+      </div>
+    </div >
+
+
+  </>
+  )
 }
-
-SwipeableEdgeDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
-export default SwipeableEdgeDrawer;
