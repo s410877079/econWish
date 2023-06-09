@@ -75,6 +75,7 @@ function Wish({ wish }) {
                     <q>
                         <Typography>{wish}</Typography>
                     </q>
+                    <q><span style={{ padding: "0 10px" }}>{wish}</span></q>
                 </Button>
             </div>
             {/* <div className="wish-text">{wish}</div> */}
@@ -104,7 +105,7 @@ function ContentPostalFront({ imgSrc, name, grade, wish, imgSrc2, sealVariant, s
 
                 <Box mt={3}>
                     <Button color='primary' onClick={onClick}>
-                        <Typography noWrap sx={{ width: "300px" }}>{wish}</Typography>
+                        <Typography noWrap sx={{ width: "300px"}}>{wish}</Typography>
                     </Button>
                 </Box>
                 <Box>

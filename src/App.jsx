@@ -15,6 +15,7 @@ import AboutUs from './components/AboutUs';
 import ChangeCircleOutlinedIcon from '@mui/icons-material/ChangeCircleOutlined';
 import SimpleSlide from './components/SlideButton';
 import FloatingActionButtons, { FloatingActionButtonGroup } from './components/FAB';
+import SpeedDailTools from './components/SpeedDial';
 
 export default function App() {
 
@@ -75,7 +76,9 @@ function getUser(targetUser, pos) {
             grade: targetUser[pos.grade],
             imgSrc: targetUser[pos.imgSrc],
             wish: targetUser[pos.wish],
-            id: targetUser[pos.id]
+            id: targetUser[pos.id],
+            sealVariant: targetUser[pos.sealVariant],
+            sealLocation: targetUser[pos.sealLocation]
         }
     )
 }
@@ -90,11 +93,13 @@ function getUserPositionIndex(user0) {
     pos.name = pos.Name
     pos.grade = pos.Grade
     pos.wish = pos.Wish
+    pos.sealVariant=pos.sealVariant
+    pos.sealLocation=pos.sealLocation
     return pos
 }
 
 function AppContent({ users }) {
-
+    console.log(users)
     // window.users means there is a global variable named users
     window.users = users
     window.autocompleteOptions = [] // autocompleteOptions is a global variable
@@ -134,10 +139,11 @@ function AppContent({ users }) {
                         <div className="endCard" />
                     </>
                 </Gallery>
+                <SpeedDailTools autocompleteOptions={autocompleteOptions}/>
             </div>
-            <FloatingActionButtons autocompleteOptions={autocompleteOptions}/>
+            {/* <FloatingActionButtons autocompleteOptions={autocompleteOptions}/> */}
             
-            
+            <SpeedDailTools autocompleteOptions={autocompleteOptions}/>
         </div>
 
     )

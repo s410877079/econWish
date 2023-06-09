@@ -10,29 +10,29 @@ import { useState } from "react"
 export const sealVariants = [0, 1, 2, 3, 4]
 export const sealLocations = [
   {
-    left: '-10px',
-    bottom: '-50px',
-    transform: 'rotate(-45deg)'
+    left: '0px',
+    bottom: '-20px',
+    transform: 'rotate(-25deg)'
   },
   {
-    left: '-50px',
-    bottom: '0px',
-    transform: 'rotate(-10deg)'
+    left: '-20px',
+    bottom: '-20px',
+    transform: 'rotate(-20deg)'
   },
   {
-    left: '-64px',
-    bottom: '15px',
-    transform: 'rotate(-42deg)'
+    left: '-20px',
+    bottom: '-20px',
+    transform: 'rotate(-25deg)'
   },
   {
-    left: '120px',
-    bottom: '-63px',
-    transform: 'rotate(-6deg)'
+    left: '-20px',
+    bottom: '-20px',
+    transform: 'rotate(-20deg)'
   },
   {
-    left: '-63px',
-    top: '-54px',
-    transform: 'rotate(-55deg)'
+    left: '-20px',
+    top: '-20px',
+    transform: 'rotate(-50deg)'
   }
 ]
 
@@ -42,7 +42,7 @@ export default function PostedStamp({ imgSrc, sealVariant, sealLocation }) {
   // console.log(sealVariant)
   // sealVariant = sealVariant? (sealVariant-1) : 2
   console.log(sealLocation)
-  sealLocation = sealLocation ? sealLocations[sealLocation] : { left: "-10px", bottom: "-50px", transform: "rotate(-45deg)" }
+  sealLocation = sealLocation ? sealLocations[sealLocation] : { left: "-20px", bottom: "-30px", transform: "rotate(-45deg)" }
 
   // sealVariant = 1
   // sealLocation = { left: "10px", bottom: "-80px", transform: "rotate(45deg)" }

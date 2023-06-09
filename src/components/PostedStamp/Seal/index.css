@@ -1,3 +1,4 @@
+/* seal */
 .seal {
 
     box-sizing: border-box;
@@ -11,47 +12,19 @@
     gap: 10px;
 
     position: absolute;
-    width: 150px;
-    height: 150px;
-    left: -73.11px;
-    bottom: -66px;
+    width: 50px;
+    height: 50px;
+    right: 10px;
 
-    border: 5px solid #008adb;
-    border-radius: 150px;
-    transform: rotate(28deg);
-
-
+    border: 3px solid #000000;
+    border-radius: 150px;   
 }
 
-.seal-color {
-    filter: invert(26%) sepia(53%) saturate(2874%) hue-rotate(187deg) brightness(91%) contrast(99%);
-
-}
-
-/* seal-icon */
 .seal-icon {
-
-    width: 120px;
-    height: 130px;
-
-    font-family: 'sans-serif';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #0164ac;
-
-    transform: rotate(28deg);
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
-
-
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 2px;
+    top: 4px;
+    transform: rotate(60deg);
 }

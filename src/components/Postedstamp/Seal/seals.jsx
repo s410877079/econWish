@@ -11,23 +11,23 @@ import heart_lake from "./img/heart-lake.svg"
 const seals = [
     {
         src: ntpu_stone,
-        style: { margin: "auto" }
+        style: { margin: "0 0 10px 4px" }
     },
     {
         src: b_school,
-        style: { margin: "0px 5px 21px -8px" }
+        style: { margin: "0 0 0 5px" }
     },
     {
         src: gate,
-        style: { margin: "0 0 10px 17px" }
-    },
-    {
-        src: eagle,
-        style: { margin: "0 0 9px 8px" }
+        style: { margin: "0 0 0 5px" }
     },
     {
         src: heart_lake,
         style: { margin: "0" }
+    },
+    {
+        src: eagle,
+        style: { margin: "0 0 0 3px" }
     }]
 
 export default seals;
