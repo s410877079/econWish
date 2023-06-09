@@ -77,6 +77,7 @@ function getUser(targetUser, pos) {
             imgSrc: targetUser[pos.imgSrc],
             wish: targetUser[pos.wish],
             id: targetUser[pos.id],
+            imgSrc2: targetUser[pos.imgSrc2],
             sealVariant: targetUser[pos.sealVariant],
             sealLocation: targetUser[pos.sealLocation]
         }
@@ -93,6 +94,7 @@ function getUserPositionIndex(user0) {
     pos.name = pos.Name
     pos.grade = pos.Grade
     pos.wish = pos.Wish
+    pos.imgSrc2=pos.Photo
     pos.sealVariant=pos.sealVariant
     pos.sealLocation=pos.sealLocation
     return pos

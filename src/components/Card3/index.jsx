@@ -83,7 +83,7 @@ function Wish({ wish }) {
     )
 }
 
-function PhotoUpload({ imgSrc2 }) {
+function Photo({ imgSrc2 }) {
     return (
         <div className="photo-upload">
             <img className="photo" src={imgSrc2} />
@@ -109,7 +109,7 @@ function ContentPostalFront({ imgSrc, name, grade, wish, imgSrc2, sealVariant, s
                     </Button>
                 </Box>
                 <Box>
-                    <PhotoUpload imgSrc2={imgSrc2} />
+                    <Photo imgSrc2={imgSrc2} />
                 </Box>
             </Stack>
         </CardContent>
