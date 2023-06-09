@@ -3,10 +3,13 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 250px 20px;
-    top: 200px;
-    left: -20px;
-
+    padding: 5px 0px;
+    gap: 0px;
+    /* position: absolute; */
+    width: 313px;
+    height: 73px;
+    left: 22px;
+    top: 475px;
 }
 
 /* left-quotation */
@@ -41,7 +44,7 @@
 /* wish-text */
 .wish-text {
     width: 100%;
-    /* height: 72px; */
+    height: 72px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;

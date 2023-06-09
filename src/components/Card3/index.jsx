@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Box, Button, Container } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import CustomizedSwitches from './Switch';
 
 export default function Card2({ user }) {
     const { name, grade, imgSrc, wish, id, imgSrc2, sealVariant, sealLocation } = user
@@ -71,14 +72,14 @@ function Wish({ wish }) {
     return (
         <div className="wish">
             <div className="wish-text">
-                <Button>
+                {/* <Button color='secondary'>
                     <q>
                         <Typography>{wish}</Typography>
                     </q>
                     <q><span style={{ padding: "0 10px" }}>{wish}</span></q>
                 </Button>
-            </div>
-            {/* <div className="wish-text">{wish}</div> */}
+            </div> */}
+          {wish}</div>
         </div>
     )
 }
