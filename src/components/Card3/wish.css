@@ -56,7 +56,6 @@
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -68,6 +67,7 @@
 
 .wish-text > q {
     quotes: &ldquo &rdquo;
+    
 }
 
 /* right-quotation */

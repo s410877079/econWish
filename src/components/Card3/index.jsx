@@ -72,14 +72,14 @@ function Wish({ wish }) {
     return (
         <div className="wish">
             <div className="wish-text">
-                {/* <Button color='secondary'>
+                <Button color='secondary'>
                     <q>
                         <Typography>{wish}</Typography>
                     </q>
-                    <q><span style={{ padding: "0 10px" }}>{wish}</span></q>
+                    {/* <q><span style={{ padding: "0 10px" }}>{wish}</span></q> */}
                 </Button>
-            </div> */}
-          {wish}</div>
+            </div>
+          {/* {wish}</div> */}
         </div>
     )
 }
