@@ -13,6 +13,7 @@ import Switch from '@mui/material/Switch';
 import Paper from '@mui/material/Paper';
 import Slide from '@mui/material/Slide';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 export default function FloatingActionButtons({ autocompleteOptions }) {
     return (
@@ -87,6 +88,11 @@ export function FloatingActionButtonGroup({autocompleteOptions}) {
             <Fab variant="extended" size="small">
                 <SearchIcon sx={{ mr: 1 }} />
                 <AutoCompleteSearch options={autocompleteOptions} />
+            </Fab>
+            <Fab variant="extended" size="small">
+                <RefreshIcon onClick={
+                    () => {window.location.reload()}
+                }/>
             </Fab>
 
         </Box>

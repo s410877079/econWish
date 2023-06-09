@@ -19,14 +19,16 @@ export default function SelectGrade({users}) {
   };
 
   return (
-    <Box sx={{ minWidth: 120, maxWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">卡片系級</InputLabel>
+    // <Box sx={{ minWidth: 120, maxWidth: 120 }}>
+      <FormControl fullWidth size="small" sx={{width: "150px"}}>
+        <InputLabel
+            variant='filled'
+        id="demo-simple-select-label">分類</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={grade}
-          label="卡片系級"
+          label=""
           onChange={handleChange}
           sx={{backgroundColor: "white"}}
         >
@@ -41,7 +43,7 @@ export default function SelectGrade({users}) {
         }
         </Select>
       </FormControl>
-    </Box>
+    // </Box>
   );
 }
 

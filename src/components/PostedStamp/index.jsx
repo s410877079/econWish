@@ -7,12 +7,42 @@ import { useEffect } from "react"
 import { Skeleton } from "@mui/material"
 import { useState } from "react"
 
+export const sealVariants = [0, 1, 2, 3, 4]
+export const sealLocations = [
+  {
+    left: '-10px',
+    bottom: '-50px',
+    transform: 'rotate(-45deg)'
+  },
+  {
+    left: '-50px',
+    bottom: '0px',
+    transform: 'rotate(-10deg)'
+  },
+  {
+    left: '-64px',
+    bottom: '15px',
+    transform: 'rotate(-42deg)'
+  },
+  {
+    left: '120px',
+    bottom: '-63px',
+    transform: 'rotate(-6deg)'
+  },
+  {
+    left: '-63px',
+    top: '-54px',
+    transform: 'rotate(-55deg)'
+  }
+]
+
 export default function PostedStamp({ imgSrc, sealVariant, sealLocation }) {
 
   // console.log('sealVariant')
   // console.log(sealVariant)
   // sealVariant = sealVariant? (sealVariant-1) : 2
-  sealLocation = sealLocation ? sealLocation : { left: "-10px", bottom: "-50px", transform: "rotate(-45deg)" }
+  console.log(sealLocation)
+  sealLocation = sealLocation ? sealLocations[sealLocation] : { left: "-10px", bottom: "-50px", transform: "rotate(-45deg)" }
 
   // sealVariant = 1
   // sealLocation = { left: "10px", bottom: "-80px", transform: "rotate(45deg)" }

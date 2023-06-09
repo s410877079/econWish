@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import "./index.css"
 import "./wish.css"
-import PostedStamp from "../PostedStamp"
+import PostedStamp, {sealVariants, sealLocations} from "../PostedStamp"
 import Stack from '@mui/material/Stack';
 import { Box, Button, Container } from '@mui/material';
 import Image from "mui-image"
@@ -15,7 +15,7 @@ import axios from 'axios';
 
 export default function Card2({ user }) {
 
-  const { name, grade, imgSrc, wish, id } = user
+  const { name, grade, imgSrc, wish, id, sealVariant, sealLocation } = user
 
   // console.log(user)
   const [showFront, setShowFront] = useState(true)
@@ -34,13 +34,15 @@ export default function Card2({ user }) {
   }, [])
 
   var cardContent = showFront ?
-    <ContentPostalFront imgSrc={imgSrc} sealVariant={5} name={name} grade={grade} wish={wish} onClick={handleClipWish} /> :
+    <ContentPostalFront imgSrc={imgSrc} sealVariant={sealVariant} 
+      sealLocation={sealLocation}
+    name={name} grade={grade} wish={wish} onClick={handleClipWish} /> :
     <ContentPostalBack imgSrc={imgSrc} wish={wish} onClick={handleCloseBackContent} />
 
 
 
   return (
-    <Card sx={{ maxWidth: 345, margin: "auto", height: 587 }}>
+    <Card className='border-image' sx={{ maxWidth: 345, margin: "auto", height: 587 }}>
       <div id={`${id}`} className='card-id'></div>
       {cardContent}
     </Card>
@@ -81,7 +83,7 @@ function Wish({ wish }) {
   )
 }
 
-function ContentPostalFront({ imgSrc, sealVariant, name, grade, wish, onClick }) {
+function ContentPostalFront({ imgSrc, sealVariant, sealLocation, name, grade, wish, onClick }) {
 
   return (
     <CardContent>
@@ -89,7 +91,7 @@ function ContentPostalFront({ imgSrc, sealVariant, name, grade, wish, onClick })
         <Box sx={{
           height: 350
         }}>
-          <PostedStamp imgSrc={imgSrc} sealVariant={sealVariant} />
+          <PostedStamp imgSrc={imgSrc} sealVariant={sealVariant} sealLocation={sealLocation} />
         </Box>
         <Box mt={5} pl={3}>
           <Sender name={name} grade={grade} />

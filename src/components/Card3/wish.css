@@ -3,24 +3,23 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 5px 0px;
-    gap: 0px;
-    position: absolute;
-    width: 312px;
-    height: 191px;
-    left: 35px;
-    top: 235px;
-    
-    }
+    padding: 250px 20px;
+    /* position: absolute; */
+    /* width: 300px;
+    height: 73px;
+    left: 35px; */
+    top: 500px;
 
-    /* left-quotation */
-    .left-quotation {
-    
+}
+
+/* left-quotation */
+.left-quotation {
+
     width: 8px;
     height: 100px;
     right: 319px;
     top: 0px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -28,61 +27,55 @@
     line-height: 20px;
     /* or 100% */
     text-align: center;
-    
+
     color: #000000;
-    
+
     /* border: 0.3px solid #FFFFFF; */
-    
-    
+
+
     /* Inside auto layout */
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    
-    }
 
-    /* wish-text */
-    .wish-text {
-    
-    width: 90%;
-    height: 125px;
+}
+
+/* wish-text */
+.wish-text {
+    width: 100%;
+    height: 72px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    border: 0.3px solid #FFFFFF;
     flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-
-    /* left: 22px;
-    right: 14px;
-    top: 0px; */
-    /* bottom: 17px; */
-    
-    font-family: 'Inria Serif';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    
-    color: #000000;
-    
-    /* border: 0.3px solid #FFFFFF; */
-
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left;
+
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 3;
     line-clamp: 2;
     -webkit-box-orient: vertical;
-    
-    }
+}
 
-    /* right-quotation */
-    .right-quotation {
-    
+.wish-text > q {
+    quotes: &ldquo &rdquo;
+}
+
+/* right-quotation */
+.right-quotation {
+
     width: 8px;
     height: 100px;
-  
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -92,16 +85,15 @@
     display: flex;
     align-items: flex-end;
     text-align: center;
-    
+
     color: #000000;
-    
+
     /* border: 0.3px solid #FFFFFF; */
 
-     /* Inside auto layout */
-     flex: none;
-     order: 2;
-     align-self: stretch;
-     flex-grow: 0;
- 
-    }
-    
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+
+}

@@ -6,8 +6,11 @@ import Modal from '@mui/material/Modal';
 import AbuotUs from '../AboutUs';
 import SendIcon from '@mui/icons-material/Send';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { IconButton, Stack } from '@mui/material';
+import { IconButton, Link, List, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material';
 import Fab from '@mui/material/Fab';
+import { FormatListBulleted } from '@mui/icons-material';
+
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -22,7 +25,7 @@ const style = {
     p: 4,
 };
 
-export function AboutUsModal({fab}) {
+export function AboutUsModal({ fab }) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -30,7 +33,7 @@ export function AboutUsModal({fab}) {
     const button = fab ? (<Stack sx={{ justifyContent: "center" }} mr={3}>
 
         <IconButton
-            
+
             onClick={handleOpen}
             size="small"
             edge="start"
@@ -41,17 +44,17 @@ export function AboutUsModal({fab}) {
         </IconButton>
 
         <Typography>
-        設計團隊
+            設計團隊
         </Typography>
 
-    </Stack>) :(
-        <Fab 
-        size="small"
-        onClick={handleOpen}
-        color="#091e32" aria-label="edit">     
-         
-         <InfoOutlinedIcon />
-     </Fab>
+    </Stack>) : (
+        <Fab
+            size="small"
+            onClick={handleOpen}
+            color="#091e32" aria-label="edit">
+
+            <InfoOutlinedIcon />
+        </Fab>
     )
     return (
         <>
@@ -93,14 +96,14 @@ export function SendPostCardModal({ fab }) {
             寄明信片
         </Typography>
 
-    </Stack>) :(
-        <Fab 
-        size="small"
-        onClick={handleOpen}
-        color="#091e32" aria-label="edit">     
-         
-         <SendIcon />
-     </Fab>
+    </Stack>) : (
+        <Fab
+            size="small"
+            onClick={handleOpen}
+            color="#091e32" aria-label="edit">
+
+            <SendIcon />
+        </Fab>
     )
     return (
         <>
@@ -113,11 +116,40 @@ export function SendPostCardModal({ fab }) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography>請填寫以下連結表單，送出後即生成一張明信片。</Typography>
-                    <Typography>每個人只能送出一張明信片，若送出多次則只保留最後一次送出之明信片。</Typography>
+                    <Stack spacing={2} sx={{ justifyContent: "center", alignItems: "center"}} >
+                        <Typography>按鈕填寫表單，送出生成明信片賀卡。</Typography>
+                        <Fab variant='circular' sx={{ backgroundColor: "#673ab7", color: "white", margin: "auto" }}>
+                            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSf2uefS9Q6o16R35FbHbvjZbBlkMysjLdQw6nMzYJ2mkF4sdA/viewform?usp=sf_link"
+                                underline="none" color="white">
+                                <FormatListBulleted />
+
+                            </Link>
+                        </Fab>
+                        <ModalSendPostcardList />
+                    </Stack>
                 </Box>
             </Modal>
 
         </>
     );
+}
+
+function ModalSendPostcardList(){
+    return(
+        <List>
+            <ListItem disablePadding sx={{flexDirection: "column", alignItems: "flex-start", }}>
+                
+                <ListItemText>
+                • 須使用可收到系辦通知的email寄送明信片。
+                </ListItemText>
+                
+                <ListItemText>
+                • 一人限寄送一張明信片。
+                    </ListItemText>
+                <ListItemText>
+                    • 要修改明信片內容請再次填寫表單，新的明信片會覆蓋舊的。
+                </ListItemText>
+            </ListItem>
+        </List>
+    )
 }

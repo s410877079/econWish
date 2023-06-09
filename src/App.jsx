@@ -5,7 +5,7 @@ import { Gallery, GalleryItem } from './components/Layout3';
 import appConfig from "./appConfig.json"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Card2 from './components/Lai';
+import Card2 from './components/Card3';
 import { EmailShareButton, FacebookIcon, FacebookShareButton, LineIcon, LineShareButton, LinkedinShareButton } from 'react-share';
 import { IconButton, Stack } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
