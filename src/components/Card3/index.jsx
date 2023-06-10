@@ -106,7 +106,7 @@ function ContentPostalFront({ imgSrc, name, grade, wish, imgSrc2, sealVariant, s
 
                 <Box mt={25}>
                     <Button color='primary' onClick={onClick}>
-                        <Typography noWrap sx={{ width: "300px" }}>{wish}</Typography>
+                        <Typography noWrap sx={{ width: "250px" }}>{wish}</Typography>
                     </Button>
                 </Box>
                 <Box>
