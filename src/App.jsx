@@ -6,7 +6,7 @@ import appConfig from "./appConfig.json"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Card2 from './components/Card3';
-import { EmailShareButton, FacebookIcon, FacebookShareButton, LineIcon, LineShareButton, LinkedinShareButton } from 'react-share';
+import { EmailShareButton, FacebookIcon, FacebookShareButton, LineIcon, LineShareButton } from 'react-share';
 import { IconButton, Stack } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
 import { MailOutlineOutlined, Menu } from '@mui/icons-material';
@@ -111,21 +111,16 @@ function AppContent({ users }) {
             }
         )
     })
-    const cards = users.map((e, i) => { if (!Object.values(e).includes(null) && !Object.values(e).includes(undefined) && !Object.values(e).includes('') && !Object.values(e).includes(' ')) { return ( <GalleryItem key={i}> <Card2 user={e} /> </GalleryItem> ) } })
-
-
-    //     return (
-    //         <GalleryItem key={i}>
-
-    //             <Card2 user={e} />
-    //             <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={e.name + ' - ' + e.grade} />
-    //         </GalleryItem>
-    //     )
-    // })
-
-    useEffect(() => {
-        scrollIntoViewWithHashId()
-    }, [])
+    const cards = users.map((e, i) => {
+    if (!Object.values(e).includes(null) && !Object.values(e).includes(undefined) && !Object.values(e).includes('') && !Object.values(e).includes(' ')) {
+        return (
+            <GalleryItem key={i} className={e.grade}>
+                <Card2 user={e} />
+                <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={e.name + ' - ' + e.grade} />
+            </GalleryItem>
+        )
+    }
+})
 
   
     return (
@@ -181,10 +176,6 @@ function ShareBar({ shareLink, title }) {
                             .then(() => {
                                 alert("已複製連結")
                             })
-
-
-                        // navigator.clipboard.writeText(shareLink)
-                        // alert(shareLink+"已複製連結")
                     }} />
                 </Stack>
 
@@ -195,15 +186,4 @@ function ShareBar({ shareLink, title }) {
         </div>
 
     )
-}
-function scrollIntoViewWithHashId() {
-    const hash = window.location.hash;
-    if (hash) {
-        const id = hash.slice(1);
-        //console.log(id)
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ block: "start", inline: "nearest" });
-        }
-    }
 }

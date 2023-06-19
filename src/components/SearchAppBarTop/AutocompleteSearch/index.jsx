@@ -25,12 +25,12 @@ export default function AutoCompleteSearch({ options }) {
       disableClearable
       options={options}
       size='small'
-      
+
       renderInput={(params) => (
         <TextField
-        variant="outlined"
+          variant="outlined"
           {...params}
-          sx={{width: "18ch", backgroundColor: "white"}}
+          sx={{ width: "18ch", backgroundColor: "white" }}
           label="搜尋寄件人"
           InputProps={{
             ...params.InputProps,
@@ -45,7 +45,6 @@ export default function AutoCompleteSearch({ options }) {
 
   );
 }
-
 function scrollToSearchedCard(id) {
   const card = document.getElementById(id)
   card.scrollIntoView({ behavior: 'smooth', block: "start", inline: "nearest" })
