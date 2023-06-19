@@ -40,7 +40,7 @@ export default function Card2({ user }) {
         <Card sx={{ maxWidth: 345, margin: "auto", height: 400}} id={id}>
             <div className="card-content">
                 <div class="background">
-                    <div id={`${id}`}></div>
+                    <div id={`${id}`}className='card-id'></div>
                     {cardContent}
                 </div>
             </div >

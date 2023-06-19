@@ -111,17 +111,17 @@ function AppContent({ users }) {
             }
         )
     })
-    const cards = users.map((e, i) => {
+    const cards = users.map((e, i) => { if (!Object.values(e).includes(null) && !Object.values(e).includes(undefined) && !Object.values(e).includes('') && !Object.values(e).includes(' ')) { return ( <GalleryItem key={i}> <Card2 user={e} /> </GalleryItem> ) } })
 
 
-        return (
-            <GalleryItem key={i} className={e.grade}>
+    //     return (
+    //         <GalleryItem key={i}>
 
-                <Card2 user={e} />
-                <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={e.name + ' - ' + e.grade} />
-            </GalleryItem>
-        )
-    })
+    //             <Card2 user={e} />
+    //             <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={e.name + ' - ' + e.grade} />
+    //         </GalleryItem>
+    //     )
+    // })
 
     useEffect(() => {
         scrollIntoViewWithHashId()
