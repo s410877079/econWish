@@ -14,7 +14,7 @@
     position: absolute;
     margin-top: 10px;
     width: 312px;
-    height: 540px;
+    height: 358px;
     background: #f5f5f5;
     border: 2px solid #524b4b;
     /* Inside auto layot */
@@ -28,16 +28,16 @@
     
 }
 /* photo-upload */
-.photo-upload {
+/* .photo-upload {
     position: absolute;
     width: 350px;
     height: 150px;
     left: -32px;
     top: 370px;
-}
+} */
 
 /* photo */
-.photo {
+/* .photo {
     position: absolute;
     width: 280px;
     height: 150px;
@@ -46,7 +46,7 @@
     background-size: cover;
     background-position: center;
     background: #c9d2df;
-}
+} */
 /* stamp */
 .stamp-holder {
     box-sizing: border-box;

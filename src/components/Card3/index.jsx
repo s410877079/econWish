@@ -15,7 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import CustomizedSwitches from './Switch';
 
 export default function Card2({ user }) {
-    const { name, grade, imgSrc, wish, id, imgSrc2, sealVariant, sealLocation } = user
+    const { name, grade, imgSrc, wish, id, sealVariant, sealLocation } = user
     console.log(user)
     const [showFront, setShowFront] = useState(true)
 
@@ -33,11 +33,11 @@ export default function Card2({ user }) {
     }, [])
 
     var cardContent = showFront ?
-        <ContentPostalFront imgSrc={imgSrc} sealVariant={sealVariant} sealLocation={sealLocation} name={name} grade={grade} wish={wish} imgSrc2={imgSrc2} onClick={handleClipWish} /> :
+        <ContentPostalFront imgSrc={imgSrc} sealVariant={sealVariant} sealLocation={sealLocation} name={name} grade={grade} wish={wish} onClick={handleClipWish} /> :
         <ContentPostalBack imgSrc={imgSrc} wish={wish} onClick={handleCloseBackContent} />
 
     return (
-        <Card sx={{ maxWidth: 345, margin: "auto", height: 587 }} id={id}>
+        <Card sx={{ maxWidth: 345, margin: "auto", height: 400}} id={id}>
             <div className="card-content">
                 <div class="background">
                     <div id={`${id}`}></div>
@@ -84,15 +84,15 @@ function Wish({ wish }) {
     )
 }
 
-function Photo({ imgSrc2 }) {
-    return (
-        <div className="photo-upload">
-            <img className="photo" src={imgSrc2} />
-        </div>
-    )
-}
+// function Photo({ imgSrc2 }) {
+//     return (
+//         <div className="photo-upload">
+//             <img className="photo" src={imgSrc2} />
+//         </div>
+//     )
+// }
 
-function ContentPostalFront({ imgSrc, name, grade, wish, imgSrc2, sealVariant, sealLocation, onClick }) {
+function ContentPostalFront({ imgSrc, name, grade, wish, sealVariant, sealLocation, onClick }) {
 
     return (
         <CardContent>
@@ -109,9 +109,9 @@ function ContentPostalFront({ imgSrc, name, grade, wish, imgSrc2, sealVariant, s
                         <Typography noWrap sx={{ width: "250px" }}>{wish}</Typography>
                     </Button>
                 </Box>
-                <Box>
+                {/* <Box>
                     <Photo imgSrc2={imgSrc2} />
-                </Box>
+                </Box> */}
             </Stack>
         </CardContent>
     )
